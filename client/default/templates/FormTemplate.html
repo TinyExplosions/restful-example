@@ -1,0 +1,31 @@
+<form>
+<% _.each(fields, function(field) { %>
+    <% if(field.type == 'input') { %>
+        <input type="text" placeholder="<%=field.label%>">
+    <% } else if(field.type == 'password') { %>
+        <input type="password" placeholder="<%=field.label%>">
+    <% } else if(field.type == 'textarea') { %>
+        <label>
+            <%=field.label%>
+            <textarea rows="5"></textarea>
+        </label>
+    <% } else if(field.type == 'dropdown') { %>
+        <label>
+            <%=field.label%>
+            <select>
+                <% _.each(field.options, function(option) { %>
+                    <option value="<%=option.value%>"><%=option.label%></option>
+                <% }); %>
+            </select>
+        </label>
+    <% } %>
+
+
+<% }); %>
+</form>
+<p>Hello</p>
+<% if(currPage !== totalPages) { %>
+    <button class="advance btn btn-block">Advance</button>
+<% } else {%>
+    <button class="submit btn btn-block">Submit</button>
+<% } %>

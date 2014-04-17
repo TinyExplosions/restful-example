@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>App Template</title>
+    <meta name="description" content="Backbone app template">
+    <meta name="author" content="Network Rail MBS">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- build:css css/styles.css -->
+    <link rel="stylesheet" href="css/ratchet-nwr-theme-ios.css">
+    <link rel="stylesheet" href="css/ratchet-nwr.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /build -->
+
+    <!-- Load the script "js/main.js" as our entry point -->
+    <!-- <script data-main="js/main" src="js/libs/require/require.js"></script> -->
+
+    <script>
+
+        var fh_config = {"appid":"<APP ID>","appkey":"<APP KEY>","host":"<FH DOMAIN>","mode":"dev"};
+        <!-- build:remove -->
+            fh_config.host = "127.0.0.1";
+        <!-- /build -->
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.dataset.main = "js/main"
+            script.src = 'js/libs/require/require.js';
+            document.body.appendChild(script);
+        }
+        $fh.ready({}, function(){
+            if(fh_config !== false) {
+                $fh.init(fh_config,function(){
+                    loadScript();
+                });
+            } else {
+                loadScript();
+            }
+        });
+    </script>
+
+
+</head>
+<body>
+    <div class="navigation"></div>
+    <div class="wrapper">
+        <header class="bar bar-nav">
+            <h1 class="title">Loading...</h1>
+        </header>
+        <div class="content">
+            <h3>Load some data</h3>
+        </div>
+    </div>
+
+</body>
+</html>

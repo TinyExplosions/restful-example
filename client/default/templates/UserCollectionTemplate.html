@@ -1,0 +1,5 @@
+<ul class="table-view">
+    <% _.each(models, function(model){ %>
+        <li class="table-view-cell"><a class="push-right" href="#user/<%= model.attributes.id %>"><%= model.attributes.fullName %></a></li>
+    <% }); %>
+</ul>

@@ -1,0 +1,232 @@
+// Type
+$font-family-default: "Avenir", Helvetica, sans-serif;
+$font-size-default: 16px;
+
+// Main theme colors
+$chrome-color:  #005172;
+$nwr-dark-blue: #023448;
+
+// Background Color
+$background-color: #eee;
+
+// Bars
+$bar-side-spacing: 16px;
+$bar-text-color: #fff;
+
+
+body {
+	background-color: $background-color;
+}
+
+.content {
+  position: absolute;
+   background-color: $background-color;
+  }
+
+.pull-left {
+	padding-left: $bar-side-spacing;
+  padding-right: $bar-side-spacing;
+ }
+
+ .pull-right {
+ padding-left: $bar-side-spacing;
+  padding-right: $bar-side-spacing;
+  }
+
+
+
+.bar {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.bar {
+  .icon {
+    padding-bottom: 9px;
+    background: $nwr-dark-blue;
+    border-bottom: 1px solid #dddddd;
+  }
+ }
+
+ .bar-nav a {
+  color: $bar-text-color;
+}
+
+.page {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* styles to hardware accelerate opening of nav when container has class .open */
+.stage-center {
+  @include transform(translate(0,0));
+  transform: translateZ(0);
+}
+
+.stage-left {
+  @include transform(translate(-100%,0));
+  transform: translateZ(0);
+}
+
+.stage-right {
+  @include transform(translate(100%,0));
+  transform: translateZ(0);
+}
+
+.transition {
+    @include transition-duration(.500s);
+}
+
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &.open {
+    @include transform(translate(80%,0));
+    transform: translateZ(0);
+  }
+}
+
+.wrapper.open .bar {
+  position: absolute;
+}
+
+.navigation {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  background: $chrome-color;
+}
+
+.appAlert {
+    /*height: 100px;*/
+    background: #F5F5F5;
+    text-align: center;
+    width: 84.375%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -150px;
+    z-index: 300;
+    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, .3);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .3);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.appAlert .alerttitle {
+    font-size: 1.2em;
+    padding-top: 5px;
+    color: #000;
+    text-align: center;
+}
+
+.appAlert .alertcontent {
+    line-height: 1.2em;
+    padding: 0 1em;
+    margin: 10px;
+}
+
+.appAlert .buttons {
+    text-align: center;
+    width: 100%;
+}
+
+.appAlert .buttons a {
+    border-top: 1px solid #AEAEAE;
+    color: #f90;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    line-height: 2.5em;
+}
+
+.appAlert .buttons.half a {
+    width: 50%;
+    float: left;
+}
+
+.appAlert .buttons a:last-child {
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-bottom-left-radius: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    -moz-border-radius-bottomright: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.appAlert .buttons.half a:first-child {
+    border-right: 1px solid #AEAEAE;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.appAlert .buttons.half a:last-child {
+    -webkit-border-bottom-right-radius: 7px;
+    -moz-border-radius-bottomright: 7px;
+    border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.appAlert .buttons a:active {
+    background: #AEAEAE;
+    color: #ffffff;
+}
+
+.dismiss {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.alertWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  position: absolute;
+  z-index: 12;
+  opacity: 0.5;
+}
+
+
+.something {
+  position: fixed;
+  height: 28px;
+  line-height: 28px;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
+  padding-left: 4px;
+  color: #fff;
+  &.probing {
+    background: yellow;
+  }
+  &.offline {
+    background: red;
+  }
+  &.online {
+    background: green;
+  }
+}
+
+
+.title {
+	color: $bar-text-color;
+}

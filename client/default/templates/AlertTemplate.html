@@ -1,0 +1,15 @@
+<div class="mask"></div>
+<div class="appAlert">
+<% if(typeof title !='undefined'){ %>
+   <div class='alerttitle'><%= title %></div>
+<% } %>
+    <div class='alertcontent'><%= content %></div>
+<% var btnCls = "buttons"; if(buttons.length === 2) { btnCls="half buttons";} %>
+    <div class='<%= btnCls %>'>
+        <% _.each(buttons, function(btn){ %>
+            <a class="<%= btn.action %>"><%= btn.label %></a>
+        <% }); %>
+    </div>
+</div>
+
+

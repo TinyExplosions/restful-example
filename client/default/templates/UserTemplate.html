@@ -1,0 +1,13 @@
+<div class="content-padded">
+    <h2><%= fullName %></h2>
+    <% if (postTitle != "") { %>
+        <h4><em><%= postTitle %></em></h4>
+    <% } %>
+    <% if (emailAddress != "") { %>
+        <h5><a href="mailto:<%= emailAddress %>"><%= emailAddress %></a></h5>
+    <% } %>
+    <p>Tel (internal): <% if (telInternal != "") { %><a href="tel:<%= telInternal %>"><%= telInternal %></a><% } %></p>
+    <p>Tel (mobex): <% if (telMobex != "") { %><a href="tel:<%= telMobex %>"><%= telMobex %></a><% } %></p>
+    <p>Tel (external): <% if (telExternal != "") { %><a href="tel:<%= telExternal %>"><%= telExternal %></a><% } %></p>
+    <div class="profilePicture"></div>
+</div>

@@ -1,0 +1,14 @@
+<form class="content-padded">
+    <input type="text" placeholder="Full Name" value="<%= fullName %>" id="fullName">
+    <input type="text" placeholder="Surname" value="<%= surname %>" id="surname">
+    <input type="text" placeholder="Preferred Name" value="<%= preferredName %>" id="preferredName">
+    <input type="text" placeholder="Post Title" value="<%= postTitle %>" id="postTitle">
+    <input type="text" placeholder="Tel (internal)" value="<%= telInternal %>" id="telInternal">
+    <input type="text" placeholder="Tel (mobex)" value="<%= telMobex %>" id="telMobex">
+    <input type="text" placeholder="Tel (external)" value="<%= telExternal %>" id="telExternal">
+    <input type="text" placeholder="Email Address" value="<%= emailAddress %>" id="emailAddress">
+    <div class="profilePicture"></div>
+    <a class="addPicture btn btn-block">Add Picture</a>
+    <a class="createUser btn btn-positive btn-block"><% if (edit) {%>Save<% } else { %>Create<%} %></a>
+    <% if (edit) {%><a class="deleteUser btn btn-negative btn-block">Delete</a><%} %>
+</form>

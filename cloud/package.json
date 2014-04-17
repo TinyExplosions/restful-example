@@ -1,0 +1,15 @@
+{
+  "name": "FH-REST-Sample",
+  "version": "0.0.1",
+  "dependencies": {
+    "fh-webapp": "*",
+    "fh-api": "*",
+    "express": "3.4.8",
+    "crypto": "*",
+    "request": "*",
+    "q": "~1.0.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0"
+  }
+}
